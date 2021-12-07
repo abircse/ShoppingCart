@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:text="Name"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMinus"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlus"
+        app:layout_constraintStart_toEndOf="@+id/ivMinus"
+        app:layout_constraintTop_toTopOf="@+id/ivMinus" />
+
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_delete"
+        android:textSize="20sp"
+        app:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivPlus"
+        app:layout_constraintTop_toBottomOf="@+id/ivMinus"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/ivPlus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_plus"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMinus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMinus"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/ivMinus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_minus"
+        android:textSize="20sp"
+        app:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/tvName"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="$0"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <ImageView
+        android:id="@+id/ivEdit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDelete"
+        app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/ivDelete"
+        app:srcCompat="@drawable/ic_edit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
