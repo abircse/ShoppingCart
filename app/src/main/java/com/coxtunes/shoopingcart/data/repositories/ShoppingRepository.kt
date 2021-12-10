@@ -2,13 +2,15 @@ package com.coxtunes.shoopingcart.data.repositories
 
 import com.coxtunes.shoopingcart.data.db.ShoppingDatabase
 import com.coxtunes.shoopingcart.data.db.entities.ShoppingItem
+import javax.inject.Inject
 
-class ShoppingRepository(
+class ShoppingRepository @Inject constructor(
     private val db: ShoppingDatabase
-) {
-    fun upsert(item: ShoppingItem) = db.getShoppingDao().upsert(item)
+): ShoppingInterfaces {
 
-    fun delete(item: ShoppingItem) = db.getShoppingDao().delete(item)
+    override fun upsert(item: ShoppingItem) = db.getShoppingDao().upsert(item)
 
-    fun getAllShoppingItems() = db.getShoppingDao().getAllShoppingItems()
+    override fun delete(item: ShoppingItem) = db.getShoppingDao().delete(item)
+
+    override fun getAllShoppingItems() = db.getShoppingDao().getAllShoppingItems()
 }
